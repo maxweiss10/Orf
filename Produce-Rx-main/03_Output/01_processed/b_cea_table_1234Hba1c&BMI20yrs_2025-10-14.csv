@@ -1,0 +1,5 @@
+"","Strategy","Cost","Effect","Inc_Cost","Inc_Effect","ICER","Status","perspective"
+"1","No Policy",116923.91776546,12.5355616749015,NA,NA,NA,"ND","healthcare"
+"2","Policy",119784.254841701,12.5184771418085,NA,NA,NA,"D","healthcare"
+"3","No Policy",125719.690857127,12.5355616749015,NA,NA,NA,"ND","societ"
+"4","Policy",128192.250293587,12.5184771418085,NA,NA,NA,"D","societ"

@@ -568,14 +568,14 @@ acomb <- function(...) abind(..., along = 3)
 # 3.1 run n.sim times of the simulation function in parallel processes, and then combine the results in sim_out, Run the function for each arm separately 
 ## The output is an 3-dimensional array (n.sample, variables, n.sim )
 
-sim_out_Policy <- foreach(s=1:n.sim, .combine = 'acomb', .verbose = T) %do% {
+sim_out_Policy <- foreach(s=1:n.sim, .combine = 'acomb', .verbose = F) %do% {
   set.seed(seed + n.cycle*s)
   run_sim(s, "Policy")
 }
 ##save the output for policy arm
 saveRDS(sim_out_Policy, file = paste("03_Output/sim_out_policy",  "SEED", seed, n.sim, n.cycle, n.loop, Sys.Date(), ".rda", sep = "_"))
 
-sim_out_No_Policy <- foreach(s=1:n.sim, .combine = 'acomb', .verbose = T) %do% {
+sim_out_No_Policy <- foreach(s=1:n.sim, .combine = 'acomb', .verbose = F) %do% {
   set.seed(seed + n.cycle*s)
   run_sim(s, "No Policy")
 }

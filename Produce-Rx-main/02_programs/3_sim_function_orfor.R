@@ -65,7 +65,7 @@ run_sim <- function(s, intervention) {
   }
   
   for (t in 1:n.cycle) {
-    print(t)
+    # Removed print(t) to prevent excessive memory usage from printing cycle numbers
   
     #Time-varying data inputs
     sim_out_t[,"Age_cycle"] <- sim_out_t[,"Age"] + t

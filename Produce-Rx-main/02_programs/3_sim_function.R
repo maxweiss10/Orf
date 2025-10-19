@@ -74,7 +74,7 @@ run_sim <- function(s, intervention) {
   sim_out_t[,"Food_cost_disc"] <- 0
   
   for (t in 1:n.cycle) {
-    print(t)
+    # Removed print(t) to prevent excessive memory usage from printing cycle numbers
   
     #Time-varying data inputs
     sim_out_t[,"Age_cycle"] <- sim_out_t[,"Age"] + t
@@ -172,7 +172,7 @@ run_sim <- function(s, intervention) {
       TRUE ~ exp(random_logrr_BMI_TSTK[5,s]*(sim_out_t[,"BMI"] - sim_out_t[,"BaseBMI"])/5)
     )
     # Calculate weighted average of HSTK and ISTK risk ratios to get risk ratio for total stroke
-    # 87% of strokes are ischemic (Source: Benjamin et al. Heart Disease and Stroke StatisticsÃ¢â,¬â???2019 Update: A Report From the American Heart Association)
+    # 87% of strokes are ischemic (Source: Benjamin et al. Heart Disease and Stroke StatisticsÃ¢ï¿½,ï¿½ï¿½???ï¿½2019 Update: A Report From the American Heart Association)
     RR_diff_fruit_tstk = 0.87*RR_diff_fruit_istk + 0.13*RR_diff_fruit_hstk
     RR_diff_veg_tstk = 0.87*RR_diff_veg_istk + 0.13*RR_diff_veg_hstk
     

@@ -1,0 +1,21 @@
+# macOS files
+.DS_Store
+__MACOSX/
+
+# R files
+.Rhistory
+.RData
+.Rproj.user
+
+# Output files
+*.rda
+*.rds
+03_Output/
+
+# Data files (keep inputs but exclude outputs)
+*.zip
+
+# Temporary files
+*~
+*.swp
+*.swo

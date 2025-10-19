@@ -18,18 +18,18 @@ The code was running out of memory due to excessive output being printed during 
 
 ### 1. Removed print(t) statements
 **Files modified:**
-- `Produce-Rx-main/02_programs/3_sim_function.R` (line 77)
-- `Produce-Rx-main/02_programs/3_sim_function_orfor.R` (line 68)
+- `Produce-Rx-main/02_programs/3_sim_function.R` (in the `for (t in 1:n.cycle)` loop around line 76)
+- `Produce-Rx-main/02_programs/3_sim_function_orfor.R` (in the `for (t in 1:n.cycle)` loop around line 67)
 
-**Change:** Replaced `print(t)` with a comment explaining why it was removed.
+**Change:** Replaced `print(t)` with a comment explaining why it was removed: `# Removed print(t) to prevent excessive memory usage from printing cycle numbers`
 
 ### 2. Disabled verbose output in foreach loops
 **Files modified:**
-- `Produce-Rx-main/02_programs/01_DOCM_orfor.R` (lines 571, 578)
-- `Produce-Rx-main/02_programs/01_DOCM_produce_rx.R` (lines 529, 536)
-- `Produce-Rx-main/02_programs/01_DOCM_produce_rx_ogkinda.R` (lines 495, 502)
+- `Produce-Rx-main/02_programs/01_DOCM_orfor.R` (in the foreach loops around lines 571, 578)
+- `Produce-Rx-main/02_programs/01_DOCM_produce_rx.R` (in the foreach loops around lines 529, 536)
+- `Produce-Rx-main/02_programs/01_DOCM_produce_rx_ogkinda.R` (in the foreach loops around lines 495, 502)
 
-**Change:** Changed `.verbose = T` to `.verbose = F` in foreach loops.
+**Change:** Changed `.verbose = T` to `.verbose = F` in all foreach loops that run the simulations.
 
 ### 3. Added .gitignore
 **File created:** `.gitignore`
